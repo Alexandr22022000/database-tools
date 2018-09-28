@@ -6,9 +6,9 @@ const pg = require('pg'),
     {MODE, CLEAN, DATA_TYPE} = require('./scripts/constants'),
 
     settings = {
-        mode: MODE.COPY,
+        mode: MODE.SAVE,
         dataType: DATA_TYPE.ALL,
-        srcDatabase: 'postgres://tpwfhhhslvhrdn:3aa60ea44a550842ac4c54976221f4995c994858ed1148515bce79c0ff4f21b9@ec2-79-125-110-209.eu-west-1.compute.amazonaws.com:5432/dbeijf1b6e4kkj?ssl=true',
+        srcDatabase: 'postgres://postgres:0000@localhost:5432/full-uptime',
         distDatabase: 'postgres://root:2556525565@185.62.190.171:5432/esay',
         filename: 'backup.txt',
         needCompress: true,

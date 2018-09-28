@@ -6,7 +6,5 @@ module.exports = (data, settings, callback) => {
     if (settings.needCrypto) {
         databaseString = CryptoJS.DES.encrypt(databaseString, settings.key).toString();
     }
-    fs.writeFile(settings.filename, databaseString);
-
-    callback();
+    fs.writeFile(settings.filename, databaseString, callback);
 };
