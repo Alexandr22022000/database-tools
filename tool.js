@@ -1,3 +1,6 @@
+//Schema: postgres://user:password@host:port/database?ssl=true
+//Example: postgres://postgres:0000@localhost:5432/avatrade_crm
+
 const pg = require('pg'),
     copy = require('./modes/copy'),
     del = require('./modes/del'),
@@ -8,14 +11,14 @@ const pg = require('pg'),
     settings = {
         mode: MODE.SAVE,
         dataType: DATA_TYPE.ALL,
-        srcDatabase: 'postgres://postgres:0000@localhost:5432/full-uptime',
-        distDatabase: 'postgres://root:2556525565@185.62.190.171:5432/esay',
-        filename: 'backup.txt',
+        srcDatabase: 'postgres://postgres:0000@localhost:5432/avatrade_crm',
+        distDatabase: 'postgres://postgres:0000@localhost:5432/avatrade_crm',
+        filename: 'database.backup',
         needCompress: true,
         key: null,
         needCrypto: false,
         srcClean: CLEAN.NONE,
-        distClean: CLEAN.NONE,
+        distClean: CLEAN.ALL,
         ignoreErrors: false
     };
 
